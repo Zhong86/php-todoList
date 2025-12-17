@@ -13,13 +13,26 @@
     <h1>Todo List Practice</h1>
     
     <div class="container">
-      <form action="createUser.php" method="POST">
-        Name: <input type="text" name="name"> <br>
-        E-mail: <input type='text' name='email'> <br>
-        <input type='submit'>
+      <form action="models/user.php" method="POST" id="login" novalidate>
+        <div class="form-group">
+          <label for="user">Username</label>
+          <input type="text" class="form-control mb-3" id="text" name="user" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="pass">Password</label>
+          <input type="password" class="form-control mb-3" id="pass" name="pass" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary ">Submit</button>
       </form>
     </div>
-
+    <script>
+    //FORM VAliDATION
+    var form = document.getElementById('login'); 
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); 
+      form.classList.add('was-validated'); 
+    }); 
+    </script>
   </body>
 </html>
 
